@@ -18,7 +18,7 @@ class TurEng(object):
             return meaning_types[1:15:3],tr_meanings[:5]
         else:
             if tr_meanings != None and meaning_types != None:
-                return meaning_types[1],tr_meanings[0]
+                return meaning_types,tr_meanings
 
     def get_meaning_en(self,word):
 
