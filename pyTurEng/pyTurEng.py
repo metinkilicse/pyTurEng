@@ -24,9 +24,9 @@ else:
         dic_obj = TurEng()
         dic_obj.change_url(dic)
         if lang == "en":
-            result = dic_obj.get_meaning_own(query)
+            result = dic_obj.get_meaning(query,"tr ts")
         else:
-            result = dic_obj.get_meaning_en(query)
+            result = dic_obj.get_meaning(query,"en tm")
         types, meaning = result[0],result[1]
         if len(meaning)==5:
             for i in range(5):
