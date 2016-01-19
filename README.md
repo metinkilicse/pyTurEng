@@ -1,7 +1,7 @@
-pyTurEng v0.1.3.162030
+pyTurEng v0.5.0119160225
 ==================
 
-This script searches meaning of specified word or wordlist(not supported yet)<br/>
+This script searches meaning of specified word or wordlist(New Feature, See CHANGELOG.md)<br/>
 on www.tureng.com webpage and receives first 5 results if there are. If not, it receives first result or says "No Result".
 
 Usage
@@ -10,8 +10,8 @@ Usage
 python pyTurEng.py tren tr merhaba<br/>
 or<br/>
 python pyTurEng.py tren tr "merhaba dünya"<br/>
-or<br/>
-python pyTurEng.py tren en wordlist.txt ( not supported yet )<br/>
+or (For WordLists)<br/>
+python pyTurEng.py tren en wordlist.txt outlist.txt<br/>
 
 Dictionary options
 ==================
