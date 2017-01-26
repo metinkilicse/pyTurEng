@@ -1,7 +1,9 @@
+#-*- coding:utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 import re
 from time import sleep
+import sys
 
 class TurEng(object):
 	def __init__(self):
@@ -53,13 +55,13 @@ class TurEng(object):
 
 	def search_from_file(self,input_file,output_file,lang_class):
 		try:
-			with open(input_file,"r") as input_f:
+			with open(input_file,"r", encoding="utf-8") as input_f:
 				input_lines = input_f.readlines()
 		except Exception as e:
 			print("Error : {}".format(e))
 			exit()
 		try:
-			out_f = open(output_file,"a")
+			out_f = open(output_file,"a", encoding="utf-8")
 			for line in input_lines:
 				r_list = self.get_meaning(line.split("\n")[0],lang_class)[1]
 				if len(r_list) == 1:
@@ -70,10 +72,10 @@ class TurEng(object):
 					res = " "
 				else:
 					res = " "
-				out_f.write(line.split("\n")[0] + " = " + res + "\n")
+				out_f.write(line.split("\n")[0] + " = " + str(res) + "\n")
 			out_f.close()
 			print(str(len(input_lines)) + " word(s) were searched.")
 		except Exception as e:
-			print("Error : {}".format(e))
+			print("Error : {}: line : {}".format(e,sys.exc_info()[2].tb_lineno))
 			exit()
 		return True

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#-*- coding:utf-8 -*-
 from __future__ import absolute_import
 
 
@@ -42,10 +42,12 @@ elif len(args)==5:
 				dic_obj.search_from_file(input_file,output_file,"tr ts")
 			else:
 				dic_obj.search_from_file(input_file,output_file,"en tm")
+		else:
+                        print("File Does Not Exist")
 	except Exception as e:
-		print("Error : {}".format(e))
+		print("Error : {} : line : {}".format(e,sys.exc_info()[2].tb_lineno))
 		exit()
 else:
 	print("Use as :\n'python pyTurEng.py tren tr merhaba\nor\n"
 		  "python pyTurEng.py tren en \"go away\"\nor\n"
-		  "python pyTurEng.py tren en wordlist.txt")
+		  "python pyTurEng.py tren en wordlist.txt outlist.txt")
