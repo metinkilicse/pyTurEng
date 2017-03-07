@@ -72,7 +72,8 @@ class TurEng(object):
 					res = " "
 				else:
 					res = " "
-				out_f.write(line.split("\n")[0] + " = " + str(res) + "\n")
+				if res != " ":
+					out_f.write(line.split("\n")[0] + " = " + str(res) + "\n")
 			out_f.close()
 			print(str(len(input_lines)) + " word(s) were searched.")
 		except Exception as e:
